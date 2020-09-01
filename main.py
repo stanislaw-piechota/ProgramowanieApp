@@ -10,6 +10,8 @@ from tkinter import filedialog
 from tkinter import messagebox
 from tkinter.ttk import Progressbar, Scrollbar
 from PIL import ImageTk, Image
+from update import *
+import sys
 
 font=('Courier', 12, 'normal')
 font2=('Courier',9,'normal')
@@ -269,9 +271,14 @@ def showDialog(*args):
 
 host = 'http://najlepszawgalaktyce.000webhostapp.com/api/'
 exs = {}
+mainPath = os.getcwd()
 
-from update import *
-def load(l,r):
+def load(l,r,p):
+    if update():
+        l['text']='Downloading updates'
+        updater(p)
+        os.execv(sys.executable, ["python"]+sys.argv)
+        #messagebox.showinfo('UPDATE', f'There is new version of app. Run {mainPath}/update.exe to do it',parent=r)
     opt = json.loads(get(host,params={'auth':'07072005','quests':'all'}).text)['quests']
     for i in range(len(opt)):
         exs[opt[i]] = json.loads(get(host,params={'auth':'07072005','loc':opt[i]}).text)['exercises']
@@ -291,7 +298,7 @@ image = ImageTk.PhotoImage(image)
 Label(image=image).place(relx=.4375,rely=.175,relwidth=.125,relheight=.167)
 l = Label(lroot,font=font,text='Checking updates',bg='#1C273A',fg='white')
 l.place(relx=0,rely=.6, relwidth=1, relheight=.1)
-th = threading.Thread(target=load, args=(l,lroot,))
+th = threading.Thread(target=load, args=(l,lroot,mainPath,))
 th.start()
 lroot.mainloop()
 
@@ -343,7 +350,6 @@ aFrame = Frame(root); aScroll = Scrollbar(aFrame, orient=VERTICAL)
 actsList = Listbox(
 aFrame, font=font2,fg='#1C273A',yscrollcommand=aScroll.set)
 aScroll.config(command=actsList.yview)
-mainPath = os.getcwd()
 
 root.geometry('600x400')
 root.title('Programming')
@@ -352,8 +358,7 @@ root.iconbitmap('logo.ico')
 for v in data.values():
     if v is None:
         errSetLabel.place(relx=0,rely=0,relwidth=1,relheight=.1)
-from update import *
-print(update())
+
 toMain()
 
 root.mainloop()
