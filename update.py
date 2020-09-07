@@ -4,6 +4,7 @@ import difflib
 import os
 
 file = loads(get('http://najlepszawgalaktyce.000webhostapp.com/api/',params={'auth':'07072005','update':'py'}).text)['update']
+fileUrl = 'http://najlepszawgalaktyce.000webhostapp.com/api/main.zip'
 
 def update():
     with open('main.py') as f:
@@ -17,8 +18,8 @@ def update():
     return False
 
 def updater(path):
-    os.system(f'powershell Invoke-WebRequest http://najlepszawgalaktyce.000webhostapp.com/api/main.zip -OutFile {path}/main.zip')
-    os.system('tar -x -f main.zip')
+    os.system(f'powershell Invoke-WebRequest {fileUrl} -OutFile {path}/main.zip')
+    os.system(f'powershell Expand-Archive {path}/main.zip .')
     os.system('del main.zip')
 
 if __name__ == '__main__':
