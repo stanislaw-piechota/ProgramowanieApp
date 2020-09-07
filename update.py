@@ -3,7 +3,7 @@ from json import loads
 import difflib
 import os
 
-file = loads(get('http://najlepszawgalaktyce.000webhostapp.com/api/',params={'auth':'07072005','update':'yes'}).text)['update']
+file = loads(get('http://najlepszawgalaktyce.000webhostapp.com/api/',params={'auth':'07072005','update':'py'}).text)['update']
 
 def update():
     with open('main.py') as f:
