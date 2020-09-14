@@ -1,5 +1,5 @@
 ## Aplikacja do strony z programowaniem
-|python_versions|
+# missingno [![PyPi version](https://img.shields.io/pypi/v/missingno.svg)](https://pypi.python.org/pypi/missingno/) ![t](https://img.shields.io/badge/status-stable-green.svg) [![](https://img.shields.io/github/license/ResidentMario/missingno.svg)](https://github.com/ResidentMario/missingno/blob/master/LICENSE.md)
 
 Instalacja oprogramowania:
 1. Pobierz repozytorium
