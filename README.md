@@ -1,4 +1,5 @@
 ## Aplikacja do strony z programowaniem
+|python_versions|
 
 Instalacja oprogramowania:
 1. Pobierz repozytorium
