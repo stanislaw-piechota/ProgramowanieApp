@@ -278,7 +278,6 @@ def load(l,r,p):
         l['text']='Downloading updates'
         updater(p)
         os.execv(sys.executable, ["python"]+sys.argv)
-        #messagebox.showinfo('UPDATE', f'There is new version of app. Run {mainPath}/update.exe to do it',parent=r)
     opt = json.loads(get(host,params={'auth':'07072005','quests':'all'}).text)['quests']
     for i in range(len(opt)):
         exs[opt[i]] = json.loads(get(host,params={'auth':'07072005','loc':opt[i]}).text)['exercises']
