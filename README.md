@@ -1,5 +1,5 @@
 ## Aplikacja do strony z programowaniem
-#[![PyPi version](https://img.shields.io/badge/python-3.7%2B-blue)](https://pypi.python.org/pypi/missingno/) ![t](https://img.shields.io/badge/status-stable-green.svg) [![](https://img.shields.io/github/license/ResidentMario/missingno.svg)](https://github.com/ResidentMario/missingno/blob/master/LICENSE.md)
+[![](https://img.shields.io/badge/python-3.7%2B-blue)](https://www.python.org/downloads/release/python-378/) [![](https://img.shields.io/badge/license-Beerware-green)](https://pl.wikipedia.org/wiki/Licencja_oprogramowania)
 
 Instalacja oprogramowania:
 1. Pobierz repozytorium
