@@ -19,7 +19,7 @@ def update():
 
 def updater(path):
     os.system(f'powershell Invoke-WebRequest {fileUrl} -OutFile {path}/main.zip')
-    os.system(f'powershell Expand-Archive {path}/main.zip .')
+    os.system(f'powershell Expand-Archive -Force {path}/main.zip .')
     os.system('del main.zip')
 
 if __name__ == '__main__':
